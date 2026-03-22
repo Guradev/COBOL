@@ -1,0 +1,47 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CALCULATOR.
+       
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       01 WS-OPERAND1 PIC 9(10).
+       01 WS-OPERAND2 PIC 9(10).
+       01 WS-TYPE-OPERATION PIC X(1).
+          88  OP-ADD              VALUE "+".
+          88  OP-SUBTRACT         VALUE "-".
+          88  OP-MULTIPLY         VALUE "*".
+          88  OP-DIVIDE           VALUE "/".
+       01 WS-RESULT PIC 9(5).
+       01 WS-RESULT-DISPLAY PIC Z(9)9.
+
+       PROCEDURE DIVISION.
+           DISPLAY "Enter first operand: " WITH NO ADVANCING.
+           ACCEPT WS-OPERAND1.
+           DISPLAY "Enter second operand: " WITH NO ADVANCING.
+           ACCEPT WS-OPERAND2.
+           DISPLAY "Enter the type of operation: " WITH NO ADVANCING.
+           ACCEPT WS-TYPE-OPERATION.
+
+           EVALUATE WS-TYPE-OPERATION
+           WHEN "+"
+              COMPUTE WS-RESULT = WS-OPERAND1 + WS-OPERAND2
+              MOVE WS-RESULT TO WS-RESULT-DISPLAY
+              DISPLAY "RESULT OF THE SUM: " WS-RESULT-DISPLAY
+           WHEN "-"
+              COMPUTE WS-RESULT = WS-OPERAND1 - WS-OPERAND2
+              MOVE WS-RESULT TO WS-RESULT-DISPLAY 
+              DISPLAY "RESULT OF THE SUBSTRACTION: " WS-RESULT-DISPLAY
+           WHEN "*"
+              COMPUTE WS-RESULT = WS-OPERAND1 * WS-OPERAND2
+              MOVE WS-RESULT TO WS-RESULT-DISPLAY 
+              DISPLAY "RESULT OF THE MULTIPLICATION: " WS-RESULT-DISPLAY
+           WHEN "/"
+              COMPUTE WS-RESULT = WS-OPERAND1 / WS-OPERAND2
+              MOVE WS-RESULT TO WS-RESULT-DISPLAY
+              DISPLAY "RESULT OF THE DIVISION: " WS-RESULT-DISPLAY
+           WHEN OTHER
+              DISPLAY "ERROR - CHECK INPUTS."
+           END-EVALUATE.
+
+           STOP RUN.
+       END PROGRAM CALCULATOR.
