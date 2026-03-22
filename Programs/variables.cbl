@@ -1,0 +1,43 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VARIABLES.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       01 WS-WORKER-INFORMATION.
+       02 MY-NAME PIC X(20).
+       02 MY-AGE PIC 9(2).
+       02 MY-SALARY PIC 9(7)V99.
+       02 MY-BONUS PIC 9(5)V99.
+       02 MY-TOTAL-SALARY   PIC 9(10)V99.
+       02 MY-TOTAL-DISPLAY  PIC $ZZZ,ZZZ,ZZ9.99.
+
+       PROCEDURE DIVISION.
+           DISPLAY "ENTER YOUR NAME " WITH NO ADVANCING.
+           ACCEPT MY-NAME.
+
+           DISPLAY "ENTER YOUR AGE " WITH NO ADVANCING.
+           ACCEPT MY-AGE.
+
+           DISPLAY "ENTER YOUR SALARY " WITH NO ADVANCING.
+           ACCEPT MY-SALARY.
+
+           DISPLAY "ENTER YOUR BONUS " WITH NO ADVANCING.
+           ACCEPT MY-BONUS.
+
+           COMPUTE MY-TOTAL-SALARY = MY-SALARY + MY-BONUS.
+           MOVE MY-TOTAL-SALARY TO MY-TOTAL-DISPLAY.
+
+           DISPLAY "Hello, " MY-NAME.
+           DISPLAY "You are " MY-AGE " years old."
+           DISPLAY "Your total salary is " MY-TOTAL-DISPLAY.
+
+           DISPLAY "Worker Information: ".
+           DISPLAY "Name: " MY-NAME.
+           DISPLAY "Age: " MY-AGE.
+           DISPLAY "Salary: " MY-SALARY.
+           DISPLAY "Bonus: " MY-BONUS.
+           DISPLAY "Total Salary: " MY-TOTAL-DISPLAY.
+
+           STOP RUN.
+       END PROGRAM VARIABLES.
