@@ -35,7 +35,7 @@
            DISPLAY "Worker Information: ".
            DISPLAY "Name: " MY-NAME.
            DISPLAY "Age: " MY-AGE.
-           DISPLAY "Salary: " MY-SALARY.
+           DISPLAY "Salary: " MY-SALARY. 
            DISPLAY "Bonus: " MY-BONUS.
            DISPLAY "Total Salary: " MY-TOTAL-DISPLAY.
 

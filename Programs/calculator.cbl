@@ -7,10 +7,10 @@
        01 WS-OPERAND1 PIC 9(10).
        01 WS-OPERAND2 PIC 9(10).
        01 WS-TYPE-OPERATION PIC X(1).
-          88  OP-ADD              VALUE "+".
-          88  OP-SUBTRACT         VALUE "-".
-          88  OP-MULTIPLY         VALUE "*".
-          88  OP-DIVIDE           VALUE "/".
+       88  OP-ADD              VALUE "+".
+       88  OP-SUBTRACT         VALUE "-".
+       88  OP-MULTIPLY         VALUE "*".
+       88  OP-DIVIDE           VALUE "/".
        01 WS-RESULT PIC 9(5).
        01 WS-RESULT-DISPLAY PIC Z(9)9.
 
